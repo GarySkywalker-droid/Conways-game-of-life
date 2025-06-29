@@ -1,5 +1,5 @@
 import collections
-from patterns import Pattern
+from .patterns import Pattern
 
 
 class LifeGrid:

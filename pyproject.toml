@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "conways_game_of_life"
+version = "0.1.0"
+description = "Conway's Game of Life"
+
+readme = "README.md"
+license = "MIT"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/conways_game_of_life"]
+
+
+[project.urls]
+Homepage = "https://github.com/GarySkywalker-droid/Conways-game-of-life"
+Repository = "https://github.com/GarySkywalker-droid/Conways-game-of-life"
+Issues = "https://github.com/GarySkywalker-droid/Conways-game-of-life/issues"
