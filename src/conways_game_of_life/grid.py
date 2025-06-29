@@ -1,8 +1,10 @@
 import collections
+
 from .patterns import Pattern
 
 
 class LifeGrid:
+
     def __init__(self, pattern: Pattern) -> None:
         self.pattern = pattern
 
@@ -23,11 +25,12 @@ class LifeGrid:
                 num_neighbors[(row + drow, col + dcol)] += 1
 
         stay_live = {
-            cell for cell, num in num_neighbors.items() if num in {2, 3}
+            cell
+            for cell, num in num_neighbors.items() if num in {2, 3}
         } & self.pattern.alive_cells
-        new_live = {
-            cell for cell, num in num_neighbors.items() if num == 3
-        } - self.pattern.alive_cells
+        new_live = {cell
+                    for cell, num in num_neighbors.items()
+                    if num == 3} - self.pattern.alive_cells
 
         self.pattern.alive_cells = stay_live | new_live
 
